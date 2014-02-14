@@ -3,6 +3,7 @@ import numpy as np
 
 import matplotlib
 import json
+import random
 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -14,7 +15,10 @@ import datetime
 import mpld3
 
 x = range(100)
-y = [a * 2 for a in x]
+y = [a * 2 + random.randint(-20, 20) for a in x]
+
+pie_fracs = [20, 30, 40, 10]
+pie_labels = ["A", "B", "C", "D"]
 
 
 def draw_fig(fig_type):
@@ -38,6 +42,10 @@ def draw_fig(fig_type):
             ax.plot(x, y)
         elif fig_type == "bar":
             ax.bar(x, y)
+        elif fig_type == "pie":
+            ax.pie(pie_fracs, labels=pie_labels)
+        elif fig_type == "scatter":
+            ax.scatter(x, y)
     return mpld3.fig_to_d3(fig)
 
 app = Flask(__name__)
