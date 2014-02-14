@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbo">
+  <ol> 
+  <li><a href="http://nbviewer.ipython.org/urls/raw.github.com/nipunreddevil/Home_Deployment/master/notebooks/jplug_daily_count.ipynb"> Number of datapoints received by appliance level meters</a></li>
+  <li><a href="https://raw.github.com/nipunreddevil/Home_Deployment/master/notebooks/Data_Time_Range.ipynb"> Start and End times of collected data</a></li>
+  <li>
+  	<a href="http://nbviewer.ipython.org/urls/raw.github.com/nipunreddevil/Home_Deployment/master/notebooks/temperature_range.ipynb"> Temperature variation in different rooms</a>
+  </li>
+    
+  </ol>
+</div>
+
+  {% endblock %}

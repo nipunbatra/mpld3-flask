@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style> 
+div #sidebar
+{
+  border:2px solid #a1a1a1;
+  padding:10px 20px; 
+  border-radius:15px;
+}
+</style>
+
+<div id="sidebar">
+  <span>Select plot type</span>
+  <br/>
+  <input type="radio" name="plot_type" value="line" checked>Line</input>
+  <br/>
+  <input type="radio" name="plot_type" value="bar" >Bar</input>
+  <br/>
+  <button type="button" id="query">View Plot</button>
+  <br/>
+</div>
+
+<div id="container" style="width:70%; height:400px;"></div>
+<script type="text/javascript">   
+
+function datetime_to_epoch(datetime)
+{
+  var aDate = datetime.split('/');
+  var epoch = new Date(aDate[2] + "," + aDate[0] + "," + aDate[1]).getTime() / 1000;
+  return epoch;
+}
+
+$("#query").click(function() {  
+
+  $("#container").hide();
+  var plot_type = $('input:radio[name=plot_type]:checked').val();
+  var qu = {"plot_type":plot_type}
+  $.ajax({
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    url: "/query",
+    data: JSON.stringify(qu),
+    success: function (data) {
+     var graph = $("#container");
+     graph.html(data);         
+     $("#container").show();
+   },
+   dataType: "html"
+ });
+});
+
+</script>
+{% endblock %}
