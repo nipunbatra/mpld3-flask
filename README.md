@@ -14,4 +14,4 @@ Adding following plots:
 
 Add another tab on the app which plot different statistical distributions and uses sliders etc. to understand the behavior with varying parameters.
 
-
+Add loading... so that the end user is aware of the state.
