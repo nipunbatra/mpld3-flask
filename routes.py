@@ -46,6 +46,10 @@ def draw_fig(fig_type):
             ax.pie(pie_fracs, labels=pie_labels)
         elif fig_type == "scatter":
             ax.scatter(x, y)
+        elif fig_type=="hist":
+            ax.hist(y, 5, normed=1, alpha=0.4)
+
+
     return mpld3.fig_to_d3(fig)
 
 app = Flask(__name__)
