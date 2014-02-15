@@ -51,7 +51,7 @@ def draw_fig(fig_type):
         elif fig_type == "scatter":
             ax.scatter(x, y)
         elif fig_type == "hist":
-            ax.hist(y, 10, normed=1, alpha=0.4)
+            ax.hist(y, 10, normed=1)
 
     return mpld3.fig_to_d3(fig)
 
