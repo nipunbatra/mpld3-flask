@@ -14,6 +14,10 @@ lock = Lock()
 import datetime
 import mpld3
 
+# Setting up matplotlib sytles using BMH
+s = json.load(open("./static/bmh_matplotlibrc.json"))
+matplotlib.rcParams.update(s)
+
 x = range(100)
 y = [a * 2 + random.randint(-20, 20) for a in x]
 
@@ -46,9 +50,8 @@ def draw_fig(fig_type):
             ax.pie(pie_fracs, labels=pie_labels)
         elif fig_type == "scatter":
             ax.scatter(x, y)
-        elif fig_type=="hist":
-            ax.hist(y, 5, normed=1, alpha=0.4)
-
+        elif fig_type == "hist":
+            ax.hist(y, 10, normed=1, alpha=0.4)
 
     return mpld3.fig_to_d3(fig)
 
