@@ -16,6 +16,8 @@
   "axes.facecolor": "#eeeeee",
   "axes.labelsize": "large",
   "axes.grid": true,
+  "grid.color":"white",
+  "grid.linestyle":"solid",
   "patch.edgecolor": "#eeeeee",
   "axes.titlesize": "x-large",
   "svg.embed_char_paths": "path",

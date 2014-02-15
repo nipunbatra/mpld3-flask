@@ -13,6 +13,7 @@ from threading import Lock
 lock = Lock()
 import datetime
 import mpld3
+from mpld3 import plugins
 
 # Setting up matplotlib sytles using BMH
 s = json.load(open("./static/bmh_matplotlibrc.json"))
@@ -52,9 +53,10 @@ def draw_fig(fig_type):
             ax.scatter(x, y)
         elif fig_type == "hist":
             ax.hist(y, 10, normed=1)
-        elif fig_type=="area":
+        elif fig_type == "area":
             ax.fill_between(x, 0, y)
 
+    plugins.connect(fig, plugins.ResetButton())
     return mpld3.fig_to_d3(fig)
 
 app = Flask(__name__)
