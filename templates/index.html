@@ -56,10 +56,10 @@ $("#query").click(function() {
     contentType: "application/json; charset=utf-8",
     url: "/query",
     data: JSON.stringify(qu),
-    success: function (data) {
-     $("#loading-div-background").hide();    
+    success: function (data) {     
      var graph = $("#container");
-     graph.html(data);         
+     graph.html(data);   
+     $("#loading-div-background").hide();      
      $("#container").show();
    },
    dataType: "html"
