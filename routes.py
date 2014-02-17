@@ -54,7 +54,8 @@ def draw_fig(fig_type):
         elif fig_type == "hist":
             ax.hist(y, 10, normed=1)
         elif fig_type == "area":
-            ax.fill_between(x, 0, y)
+            ax.plot(x, y)
+            ax.fill_between(x, 0, y, alpha=0.2)
 
     plugins.connect(fig, plugins.ResetButton())
     return mpld3.fig_to_d3(fig)
