@@ -1,3 +1,6 @@
+NB: The mpld3 API has changed a bit. I shall update the code soon to reflect that. 
+The changes are fairly minimal (such as `fig_to_d3` to `fig_to_html`)
+
 mpld3-flask
 -----------
 

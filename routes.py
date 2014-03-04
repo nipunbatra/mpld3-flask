@@ -57,8 +57,8 @@ def draw_fig(fig_type):
             ax.plot(x, y)
             ax.fill_between(x, 0, y, alpha=0.2)
 
-    plugins.connect(fig, plugins.ResetButton())
-    return mpld3.fig_to_d3(fig)
+    
+    return mpld3.fig_to_html(fig)
 
 app = Flask(__name__)
 
